@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're Invited!</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FDFBF8;
+            color: #5D4037;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        #hero-header {
+            background-position:center;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #E1C699; 
+            opacity: 0;
+            border-radius: 50%;
+            animation: fall 15s linear infinite;
+        }
+        
+        .confetti:nth-child(2n) {
+            width: 6px;
+            height: 16px;
+            border-radius: 0;
+            background-color: #f2e6d9;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotateZ(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotateZ(720deg);
+                opacity: 0;
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div id="app" class="relative">
+
+        <div class="confetti-container">
+        </div>
+
+        <header id="hero-header" class="h-screen w-full flex flex-col justify-center items-center text-center bg-cover bg-center bg-fixed p-4">
+            <div class="bg-white/70 backdrop-blur-sm p-8 rounded-lg shadow-xl animate-on-scroll">
+                <h1 class="text-2xl md:text-6xl font-bold tracking-wider text-amber-900">
+                    <span class="groom-name"></span> <br> 💞  <br><span class="bride-name"></span>
+                </h1>
+                <p class="mt-4 text-lg md:text-2xl text-amber-800">are getting married!</p>
+            </div>
+        </header>
+
+        <main class="max-w-4xl mx-auto p-8 md:p-12">
+            <section class="text-center my-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl mb-4">You Are Invited</h2>
+                <p class="text-lg leading-relaxed max-w-2xl mx-auto">
+                    To celebrate with us as we begin our new life together. Your presence is the greatest gift we could ask for on this special day.
+                </p>
+            </section>
+
+            <section class="my-16 flex flex-col md:flex-row justify-around items-center gap-12">
+                <div class="text-center animate-on-scroll" style="transition-delay: 200ms;">
+                    <div class="w-24 h-24 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold">When</h3>
+                    <p id="event-date" class="text-lg"></p>
+                    <p id="event-time" class="text-lg"></p>
+                </div>
+                <a target="_blank" href="https://maps.app.goo.gl/mnKmNkSC2QnATE4KA" class="block text-center animate-on-scroll" style="transition-delay: 400ms;">
+                    <div class="w-24 h-24 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold">Where</h3>
+                    <p id="venue-name" class="text-lg"></p>
+                    <p id="venue-address" class="text-lg"></p>
+                </div>
+            </section>
+            
+            <section class="my-20 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl text-center mb-8">Our Story</h2>
+                 <div class="bg-white/60 p-8 rounded-lg shadow-lg text-center leading-loose">
+                    <p>"<span id="our-story"></span>"</p>
+                </div>
+            </section>
+
+        </main>
+        <footer class="text-center p-8 bg-amber-50">
+            <p class="text-amber-800">Made with love</p>
+            <p class="text-xl mt-2 text-amber-900"><span class="groom-name"></span> & <span class="bride-name"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const weddingDetails = {
+                groomName: 'Nay Lin Aung',
+                brideName: 'Su Su Paing',
+                heroImage: './assets/thumbnail.jpg',
+                eventDate: 'Saturday, June 14, 2025',
+                eventTime: '4:00 PM',
+                venueName: 'မင်္ဂလာဗျူဟာခန်းမ (၂)',
+                venueAddress: 'ပျဉ်းမနား နေပြည်တော်',
+                ourStory: 'Our journey began with a shared love for adventure and a perfectly brewed cup of coffee. After years of laughter, exploration, and growing together, we can\'t wait to start our biggest adventure yet: marriage.',
+            };
+
+            document.querySelectorAll('.groom-name').forEach(el => el.textContent = weddingDetails.groomName);
+            document.querySelectorAll('.bride-name').forEach(el => el.textContent = weddingDetails.brideName);
+            document.getElementById('hero-header').style.backgroundImage = `url(${weddingDetails.heroImage})`;
+            document.getElementById('event-date').textContent = weddingDetails.eventDate;
+            document.getElementById('event-time').textContent = weddingDetails.eventTime;
+            document.getElementById('venue-name').textContent = weddingDetails.venueName;
+            document.getElementById('venue-address').textContent = weddingDetails.venueAddress;
+            document.getElementById('our-story').textContent = weddingDetails.ourStory;
+
+
+            // --- Generate Confetti ---
+            const confettiContainer = document.querySelector('.confetti-container');
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDelay = Math.random() * 15 + 's';
+                confetti.style.animationDuration = (10 + Math.random() * 10) + 's';
+                confettiContainer.appendChild(confetti);
+            }
+
+
+            // --- Setup scroll-triggered animations ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Optional: stop observing once animated
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
+
