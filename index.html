@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>You're Invited!</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Join Nay Lin Aung and Su Su Paing as they celebrate their wedding on June 14, 2025 at မင်္ဂလာဗျူဟာခန်းမ (၂), ပျဉ်းမနား နေပြည်တော်. You're invited to celebrate this special day with us!">
-    <meta name="keywords" content="wedding invitation, Nay Lin Aung, Su Su Paing, wedding ceremony, June 2025, Myanmar wedding, နေပြည်တော် wedding">
+    <meta name="description"
+        content="Join Nay Lin Aung and Su Su Paing as they celebrate their wedding on June 14, 2025 at မင်္ဂလာဗျူဟာခန်းမ (၂), ပျဉ်းမနား နေပြည်တော်. You're invited to celebrate this special day with us!">
+    <meta name="keywords"
+        content="wedding invitation, Nay Lin Aung, Su Su Paing, wedding ceremony, June 2025, Myanmar wedding, နေပြည်တော် wedding">
     <meta name="author" content="Nay Lin Aung & Su Su Paing">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph Meta Tags for Social Media -->
     <meta property="og:title" content="Nay Lin Aung & Su Su Paing - Wedding Invitation">
-    <meta property="og:description" content="You're invited to celebrate our wedding on June 14, 2025! Join us for this special day as we begin our new life together.">
+    <meta property="og:description"
+        content="You're invited to celebrate our wedding on June 14, 2025! Join us for this special day as we begin our new life together.">
     <meta property="og:image" content="./assets/thumbnail.jpg">
     <meta property="og:url" content="https://nay-and-su-wedding.vercel.app/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Nay Lin Aung & Su Su Paing Wedding">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Nay Lin Aung & Su Su Paing - Wedding Invitation">
-    <meta name="twitter:description" content="You're invited to celebrate our wedding on June 14, 2025! Join us for this special day.">
+    <meta name="twitter:description"
+        content="You're invited to celebrate our wedding on June 14, 2025! Join us for this special day.">
     <meta name="twitter:image" content="./assets/thumbnail.jpg">
-    
+
     <!-- Additional SEO Meta Tags -->
     <meta name="theme-color" content="#5D4037">
     <link rel="canonical" href="https://nay-and-su-wedding.vercel.app/">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    
+
+
     <style>
         @font-face {
             font-family: 'Merienda';
@@ -48,10 +53,17 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, p, span, div, a, button {
+        h1,
+        h2,
+        h3,
+        p,
+        span,
+        div,
+        a,
+        button {
             font-family: 'Merienda', 'Playfair Display', serif;
         }
-        
+
         .confetti-container {
             position: fixed;
             top: 0;
@@ -61,38 +73,41 @@
             pointer-events: none;
             z-index: -1;
         }
+
         #hero-header {
-            background-position:center;
+            background-position: center;
         }
-        
+
         .confetti {
             position: absolute;
             width: 10px;
             height: 10px;
-            background-color: #E1C699; 
+            background-color: #E1C699;
             opacity: 0;
             border-radius: 50%;
             animation: fall 15s linear infinite;
         }
-        
+
         .confetti:nth-child(2n) {
             width: 6px;
             height: 16px;
             border-radius: 0;
             background-color: #f2e6d9;
         }
-        
+
         @keyframes fall {
             0% {
                 transform: translateY(-10vh) rotateZ(0deg);
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(110vh) rotateZ(720deg);
                 opacity: 0;
             }
         }
-        #hero-header { 
+
+        #hero-header {
             background-size: contain;
             background-repeat: no-repeat;
         }
@@ -107,26 +122,42 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .heart-image {
-
-            aspect-ratio: 1;
-            object-fit: cover;
-            --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
+        .heart-wrapper {
+            background-color: #5D4037;
+            --_m: radial-gradient(#000 69%, #0000 70%) 84.5%/50%;
             -webkit-mask-box-image: var(--_m);
-                        mask-border: var(--_m);
-            clip-path: polygon(-41% 0,50% 91%, 141% 0);
+            mask-border: var(--_m);
+            clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+        }
+        .heart-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            --_m: radial-gradient(#000 69%, #0000 70%) 84.5%/50%;
+            -webkit-mask-box-image: var(--_m);
+            mask-border: var(--_m);
+            clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+
+            transform: scale(0.98);
         }
     </style>
 </head>
+
 <body class="antialiased">
     <div id="app" class="relative">
 
         <div class="confetti-container">
         </div>
 
-        <header id="hero-header" class="h-screen w-full flex flex-col gap-4 justify-center items-center text-center bg-cover bg-center p-4">
+        <header id="hero-header"
+            class="h-screen w-full flex flex-col gap-4 justify-center items-center text-center bg-cover bg-center p-4">
 
-            <img src="./assets/thumbnail.jpeg" class="w-40 h-40 md:w-72 md:h-72 heart-image mx-auto animate-on-scroll">
+            <!-- <img src="./assets/thumbnail.jpeg" class="w-40 h-40 md:w-72 md:h-72 heart-image mx-auto animate-on-scroll"> -->
+
+            <div class="heart-wrapper w-40 h-40 md:w-72 md:h-72 mx-auto animate-on-scroll">
+                <img src="./assets/thumbnail.jpeg" class="heart-image">
+            </div>
 
             <div class="animate-on-scroll">
                 <h1 class="text-2xl md:text-4xl font-bold tracking-wider text-amber-900">
@@ -139,52 +170,61 @@
             <section class="text-center my-16 animate-on-scroll">
                 <h2 class="text-4xl md:text-5xl mb-4">You Are Invited</h2>
                 <p class="text-lg leading-relaxed max-w-2xl mx-auto">
-                    To celebrate with us as we begin our new life together. Your presence is the greatest gift we could ask for on this special day.
+                    To celebrate with us as we begin our new life together. Your presence is the greatest gift we could
+                    ask for on this special day.
                 </p>
             </section>
 
             <section class="my-16 flex flex-col md:flex-row justify-around items-center gap-12">
                 <div class="text-center animate-on-scroll" style="transition-delay: 200ms;">
                     <div class="w-24 h-24 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-800" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
                     </div>
                     <h3 class="text-2xl font-semibold">When</h3>
                     <p id="event-date" class="text-lg"></p>
                     <p id="event-time" class="text-lg"></p>
                 </div>
-                <a target="_blank" href="https://maps.app.goo.gl/mnKmNkSC2QnATE4KA" class="block text-center animate-on-scroll" style="transition-delay: 400ms;">
+                <a target="_blank" href="https://maps.app.goo.gl/mnKmNkSC2QnATE4KA"
+                    class="block text-center animate-on-scroll" style="transition-delay: 400ms;">
                     <div class="w-24 h-24 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
-                         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-800 animate-bounce " fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-800 animate-bounce "
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
                     </div>
                     <h3 class="text-2xl font-semibold">Where</h3>
                     <p id="venue-name" class="text-lg"></p>
                     <p id="venue-address" class="text-lg"></p>
                 </a>
             </section>
-            
+
             <section class="my-20 animate-on-scroll">
                 <h2 class="text-4xl md:text-5xl text-center mb-8">Our Story</h2>
                 <div class="max-w-4xl mx-auto">
-                    <video 
-                        class="w-full rounded-t-lg shadow-md" 
-                        controls 
-                        preload="metadata"
-                        poster="./assets/poster.jpeg"
-                    >
+                    <video class="w-full rounded-t-lg shadow-md" controls preload="metadata"
+                        poster="./assets/poster.jpeg">
                         <source src="https://s3.tebi.io/core-test/wedding.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                 <div class="bg-white/60 p-8 rounded-lg shadow-lg text-center leading-loose">
+                <div class="bg-white/60 p-8 rounded-lg shadow-lg text-center leading-loose">
                     <p>"<span id="our-story"></span>"</p>
                 </div>
             </section>
 
-            
+
         </main>
         <footer class="text-center p-8 bg-amber-50">
             <p class="text-amber-800">Made with love</p>
-            <p class="text-xl mt-2 text-amber-900"><span class="groom-name"></span> & <span class="bride-name"></span></p>
+            <p class="text-xl mt-2 text-amber-900"><span class="groom-name"></span> & <span class="bride-name"></span>
+            </p>
         </footer>
     </div>
 
@@ -241,5 +281,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>
