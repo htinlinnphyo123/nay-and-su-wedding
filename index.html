@@ -56,9 +56,9 @@
             pointer-events: none;
             z-index: -1;
         }
-        /* #hero-header {
+        #hero-header {
             background-position:center;
-        } */
+        }
         
         .confetti {
             position: absolute;
@@ -106,12 +106,11 @@
         <div class="confetti-container">
         </div>
 
-        <header id="hero-header" class="h-screen w-full flex flex-col justify-center items-center text-center bg-cover bg-center bg-fixed p-4">
-            <div class="bg-white/70 backdrop-blur-sm p-8 rounded-lg shadow-xl animate-on-scroll">
-                <h1 class="text-2xl md:text-6xl font-bold tracking-wider text-amber-900">
-                    <span class="groom-name"></span> <br> 💞  <br><span class="bride-name"></span>
+        <header id="hero-header" class="h-screen w-full flex flex-col justify-start items-center text-center bg-cover bg-center bg-fixed p-4">
+            <div class="bg-white/70 backdrop-blur-sm p-4 rounded-lg shadow-xl animate-on-scroll">
+                <h1 class="text-2xl md:text-4xl font-bold tracking-wider text-amber-900">
+                    <span class="groom-name block md:inline"></span> 💞 <span class="bride-name block md:inline"></span>
                 </h1>
-                <p class="mt-4 text-lg md:text-2xl text-amber-800">are getting married!</p>
             </div>
         </header>
 
