@@ -31,20 +31,25 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
+        @font-face {
+            font-family: 'Merienda';
+            src: url('./assets/fonts/Merienda/static/Merienda-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Merienda', 'Poppins', sans-serif;
             background-color: #FDFBF8;
             color: #5D4037;
             overflow-x: hidden;
         }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+        h1, h2, h3, p, span, div, a, button {
+            font-family: 'Merienda', 'Playfair Display', serif;
         }
         
         .confetti-container {
@@ -87,6 +92,9 @@
                 opacity: 0;
             }
         }
+        #hero-header { 
+            background-position: center;
+        }
 
         .animate-on-scroll {
             opacity: 0;
@@ -98,6 +106,16 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .heart-image {
+            width: 300px;
+            height: 300px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
+            -webkit-mask-box-image: var(--_m);
+                        mask-border: var(--_m);
+            clip-path: polygon(-41% 0,50% 91%, 141% 0);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -106,12 +124,16 @@
         <div class="confetti-container">
         </div>
 
-        <header id="hero-header" class="h-screen w-full flex flex-col justify-start items-center text-center bg-cover bg-center bg-fixed p-4">
-            <div class="bg-white/70 backdrop-blur-sm p-4 rounded-lg shadow-xl animate-on-scroll">
+        <header id="hero-header" class="h-screen w-full flex flex-col gap-4 justify-center items-center text-center bg-cover bg-center bg-fixed p-4">
+
+            <img src="./assets/thumbnail.jpeg" class="heart-image mx-auto animate-on-scroll">
+
+            <div class="animate-on-scroll">
                 <h1 class="text-2xl md:text-4xl font-bold tracking-wider text-amber-900">
                     <span class="groom-name block md:inline"></span> 💞 <span class="bride-name block md:inline"></span>
                 </h1>
             </div>
+            <p class="animate-on-scroll font-bold text-xl md:text-2xl tracking-wider">SEPTEMBER 23, 2025</p>
         </header>
 
         <main class="max-w-4xl mx-auto p-8 md:p-12">
@@ -160,7 +182,7 @@
             const weddingDetails = {
                 groomName: 'Nay Lin Aung',
                 brideName: 'Su Su Paing',
-                heroImage: './assets/thumbnail.jpg',
+                heroImage: './assets/banner.jpeg',
                 eventDate: 'Saturday, June 14, 2025',
                 eventTime: '4:00 PM',
                 venueName: 'မင်္ဂလာဗျူဟာခန်းမ (၂)',
@@ -170,9 +192,9 @@
 
             document.querySelectorAll('.groom-name').forEach(el => el.textContent = weddingDetails.groomName);
             document.querySelectorAll('.bride-name').forEach(el => el.textContent = weddingDetails.brideName);
-            document.getElementById('hero-header').style.backgroundImage = `url(${weddingDetails.heroImage})`;
             document.getElementById('event-date').textContent = weddingDetails.eventDate;
             document.getElementById('event-time').textContent = weddingDetails.eventTime;
+            document.getElementById('hero-header').style.backgroundImage = `url(${weddingDetails.heroImage})`;
             document.getElementById('venue-name').textContent = weddingDetails.venueName;
             document.getElementById('venue-address').textContent = weddingDetails.venueAddress;
             document.getElementById('our-story').textContent = weddingDetails.ourStory;
