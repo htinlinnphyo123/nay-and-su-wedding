@@ -93,7 +93,8 @@
             }
         }
         #hero-header { 
-            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
         .animate-on-scroll {
@@ -109,6 +110,7 @@
         .heart-image {
             width: 300px;
             height: 300px;
+
             aspect-ratio: 1;
             object-fit: cover;
             --_m: radial-gradient(#000 69%,#0000 70%) 84.5%/50%;
@@ -124,16 +126,15 @@
         <div class="confetti-container">
         </div>
 
-        <header id="hero-header" class="h-screen w-full flex flex-col gap-4 justify-center items-center text-center bg-cover bg-center bg-fixed p-4">
+        <header id="hero-header" class="h-screen w-full flex flex-col gap-4 justify-center items-center text-center bg-cover bg-center p-4">
 
-            <img src="./assets/thumbnail.jpeg" class="heart-image mx-auto animate-on-scroll">
+            <img src="./assets/thumbnail.jpeg" class="heart-image mx-auto animate-on-scroll border-2 border-red-500">
 
             <div class="animate-on-scroll">
                 <h1 class="text-2xl md:text-4xl font-bold tracking-wider text-amber-900">
-                    <span class="groom-name block md:inline"></span> 💞 <span class="bride-name block md:inline"></span>
+                    <span class="groom-name block"></span> & <span class="bride-name block"></span>
                 </h1>
             </div>
-            <p class="animate-on-scroll font-bold text-xl md:text-2xl tracking-wider">SEPTEMBER 23, 2025</p>
         </header>
 
         <main class="max-w-4xl mx-auto p-8 md:p-12">
