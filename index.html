@@ -154,21 +154,34 @@
                 </div>
                 <a target="_blank" href="https://maps.app.goo.gl/mnKmNkSC2QnATE4KA" class="block text-center animate-on-scroll" style="transition-delay: 400ms;">
                     <div class="w-24 h-24 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
-                         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-amber-800 animate-bounce " fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                     </div>
                     <h3 class="text-2xl font-semibold">Where</h3>
                     <p id="venue-name" class="text-lg"></p>
                     <p id="venue-address" class="text-lg"></p>
-                </div>
+                </a>
             </section>
             
             <section class="my-20 animate-on-scroll">
                 <h2 class="text-4xl md:text-5xl text-center mb-8">Our Story</h2>
+                <div class="max-w-4xl mx-auto">
+                    <video 
+                        class="w-full rounded-lg shadow-md" 
+                        controls 
+                        preload="metadata"
+                        poster="./assets/thumbnail.jpeg"
+                    >
+                        <source src="./assets/wedding.mp4" type="video/mp4">
+                        <source src="./assets/wedding.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
                  <div class="bg-white/60 p-8 rounded-lg shadow-lg text-center leading-loose">
                     <p>"<span id="our-story"></span>"</p>
                 </div>
             </section>
 
+            
         </main>
         <footer class="text-center p-8 bg-amber-50">
             <p class="text-amber-800">Made with love</p>
